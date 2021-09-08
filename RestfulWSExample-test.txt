@@ -1,0 +1,169 @@
+Representational state transfer 
+lightweight and fast
+
+it provides interface with get,post,put,delete methods
+json,xml
+text
+self descriptive
+some additional features of secutiry 
+http methods with request body
+response content
+stateful interactions
+===================================
+JAX-RS
+Java api for xml Web services which uses server client and using xml for communication
+jax-ws is allowing devlopers to write message-oriented and rpc web services
+hiding important /complexity from application developer
+plat form independent 
+===============================================
+ADMIN@DESKTOP-6PTEN1D MINGW64 ~
+$ cd \
+> cd C:\apache-tomee-plus-9.0.0-M7
+bash: cd: too many arguments
+
+ADMIN@DESKTOP-6PTEN1D MINGW64 ~
+$ cd C:\apache-tomee-plus-9.0.0-M7
+
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X GET ""
+curl: (3) URL using bad/illegal format or missing URL
+
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X GET "http://localhost:8080/rsws/score"
+{"wins":"0", "losses","ties": "0"}
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X post "http://localhost:8080/rsws/score/wins"
+0
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+1
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+2
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+3
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X GET "http://localhost:8080/rsws/score/wins"
+4
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/losses"
+0
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/losses"
+1
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/losses"
+2
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/ties"
+0
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$
+
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/ties"
+1
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X GET "http://localhost:8080/rsws/score"
+{"wins":"4", "losses","ties": "3"}
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X PUT "http://localhost:8080/rsws/score?wins=11&losses=22&ties=33"
+{"wins":"11", "losses","ties": "22"}
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X GET "http://localhost:8080/rsws/score"
+{"wins":"0", "losses":"0","ties": "0"}
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+0
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+1
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+2
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+3
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+4
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/losses"
+0
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$
+
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/losses"
+1
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/losses"
+2
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/losses"
+3
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/losses"
+4
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/ties"
+0
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/ties"
+1
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/ties"
+2
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/ties"
+3
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X GET "http://localhost:8080/rsws/score"
+{"wins":"5", "losses":"5","ties": "4"}
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X PUT "http://localhost:8080/rsws/score?wins=101&losses=32&ties=25"
+{"wins":"101", "losses","ties": "32"}
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X GET "http://localhost:8080/rsws/score"
+{"wins":"0", "losses":"0","ties": "0"}
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/ties"
+0
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/ties"
+1
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/ties"
+2
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/ties"
+3
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/losses"
+0
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/losses"
+1
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+0
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+1
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+2
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+3
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X POST "http://localhost:8080/rsws/score/wins"
+4
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X GET "http://localhost:8080/rsws/score"
+{"wins":"5", "losses":"2","ties": "4"}
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
+$ curl -X PUT "http://localhost:8080/rsws/score?wins=101&losses=32&ties=25"
+{"wins":"101", "losses":"32","ties": "25"}
+ADMIN@DESKTOP-6PTEN1D MINGW64 /c/apache-tomee-plus-9.0.0-M7
