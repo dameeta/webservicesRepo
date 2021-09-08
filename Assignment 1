@@ -1,1 +1,6 @@
 
+Create a web service in java with Jax-RS
+1.add the books to the library
+2.Edit the books from the library
+3.delete the book from the library
+4.list the book from the library
